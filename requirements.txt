@@ -1,6 +1,7 @@
 streamlit
 langchain
+openai
 langchain-openai
 python-dotenv
 pillow
-langchain_community
+langchain-community
