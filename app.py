@@ -98,6 +98,13 @@ st.markdown("""
             .avatar-name {
                 font-size: 13px;
             }
+            .avatar-container img{
+                border-radius: 50%;
+                max-width: 150px;
+                height: auto;
+                box-shadow: none;
+                
+            }
         }
     </style>
 """, unsafe_allow_html=True)
@@ -115,8 +122,8 @@ else:
 # ========== Header ==========
 col1, col2 = st.columns([8, 1])
 with col1:
-    st.markdown("## 🤖 LangChain AI Assistant")
-    st.markdown("Ask any question and get real-time answers powered by OpenRouter + LangChain.")
+    st.markdown("## 🤖 JIN \nAI Assistant")
+    st.markdown("Ask any question and get real-time answers.")
 with col2:
     if avatar_base64:
         st.markdown(f"""
@@ -144,7 +151,7 @@ if "messages" not in st.session_state:
 user_input = st.chat_input("Ask your question here...")
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
-    with st.spinner("Thinking..."):
+    with st.spinner("JIN..."):
         try:
             response = llm.invoke([HumanMessage(content=user_input)])
             st.session_state.messages.append({"role": "assistant", "content": response.content})
